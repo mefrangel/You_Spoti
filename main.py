@@ -4,8 +4,8 @@ from spotipy.oauth2 import SpotifyOAuth
 
 def get_playlist():
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
-        client_id='7a737338055f4456a14896dfa21b63ca',
-        client_secret='f921c8aaff2f483080ae2383d94e23ce',
+        client_id='',
+        client_secret='',
         redirect_uri='http://localhost:8888/callback',
         scope='playlist-read-private'
     ))
