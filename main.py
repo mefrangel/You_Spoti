@@ -1,18 +1,11 @@
-from spotipy import Spotify
+import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-import google_auth_oauthlib.flow
-import googleapiclient.discovery
-import googleapiclient.errors
-
-import Secret
 
 
 def get_playlist():
-    credenciales = Secret.SP_credenciales()
-
-    sp = Spotify(auth_manager=SpotifyOAuth(
-        client_id=credenciales.client_id,
-        client_secret=credenciales.client_secret,
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
+        client_id='7a737338055f4456a14896dfa21b63ca',
+        client_secret='f921c8aaff2f483080ae2383d94e23ce',
         redirect_uri='http://localhost:8888/callback',
         scope='playlist-read-private'
     ))
@@ -45,16 +38,8 @@ def print_lista(lista_print):
         print()
 
 
-def create_playlist():
-    credenciales = Secret.YT_credenciales()
-    youtube = googleapiclient.discovery.build(
-        serviceName='youtube',
-        version='v3',
-        credentials=credenciales.csf
-    )
-
-
 def add_playlist(playlist):
+
     print("Hello world!")
 
 
